@@ -1,8 +1,5 @@
 <?php
-    $servername = "192.168.45.128:33060";
-    $username = "root";
-    $password = "antonioCastellanos";
-    $dbname = "web";
+    include ("mysqlConection.php");
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
