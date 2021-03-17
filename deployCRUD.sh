@@ -1,6 +1,3 @@
-# Create image php
-docker build docker/. -t phpcrud
-
 #Execute service mysql
 docker run -itd -p 33060:3306 --name mysqlDocker -e MYSQL_ROOT_PASSWORD=antonioCastellanos mysql
 sleep 20
