@@ -24,6 +24,6 @@ sudo docker build ./docker -t php-mysql
 Ejecutar el siguiente script para desplegar los servicios, y llenar algunos campos de la base de datos.
 
 ```bash
-chmod +x deployServices.sh
-sudo ./deployServices.sh
+chmod +x deployCRUD.sh
+sudo ./deployCRUD.sh
 ```
