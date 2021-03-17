@@ -1,5 +1,5 @@
 <?php
-	$servername = "10.23.143.7:33060";
+	$servername = "ipMysqlContainer:3306";
     	$username = "root";
     	$password = "antonioCastellanos";
     	$dbname = "web";

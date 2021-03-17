@@ -8,6 +8,14 @@ sleep 20
 #Execute service php
 docker run -itd --name phpserver -v "$PWD":/opt -p 8000:8000 phpcrud
 
+#Check IP from PHP Server
+ipMysqlContainer=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{println .IPAddress}}{{end}}' mysqlDocker)
+
+#Replace Correct IP container on files PHP
+
+sed -i "s/ipMysqlContainer/$ipMysqlContainer/g" src/mysqlConection.php
+sed -i "s/ipMysqlContainer/$ipMysqlContainer/g" init/checkConection.php
+
 #Check mysql conection
 docker exec -it phpserver php /opt/init/checkConection.php
 
@@ -17,5 +25,10 @@ docker exec -it mysqlDocker mysql -u root -pantonioCastellanos -e "create databa
 #Create table, and inser information: with script sql
 docker exec -it mysqlDocker mysql -u root -pantonioCastellanos -e "use web; $(cat ./init/alumnos.sql)"
 
+#Check IP from PHP Server
+ipPhpContainer=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{println .IPAddress}}{{end}}' phpserver)
+
 #Start php server
-docker exec -itd phpserver php -S 172.17.0.7:8000
+docker exec -itd phpserver php -S $ipPhpContainer:8000
+
+echo "Deployment completed!"

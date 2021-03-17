@@ -6,7 +6,7 @@ create table alumnos(
 	PRIMARY KEY (id)
 	);
 show tables;
-insert into alumnos (nombre, apellido, edad) values ("antonio", "castellanos", 24);
-insert into alumnos (nombre, apellido, edad) values ("yess", "u", 24);
-insert into alumnos (nombre, apellido, edad) values ("erika", "hernandez", 25);
+insert into alumnos (nombre, apellido, edad) values ("Equitrack", "CRUD", 24);
+insert into alumnos (nombre, apellido, edad) values ("DOCKER MYSQL", "HTML PHP", 24);
+insert into alumnos (nombre, apellido, edad) values ("Li", "Mendiola", 25);
 select * from alumnos;
