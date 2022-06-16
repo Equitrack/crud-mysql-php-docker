@@ -3,7 +3,7 @@ docker run -itd -p 33060:3306 --name mysqlDocker -e MYSQL_ROOT_PASSWORD=antonioC
 sleep 20
 
 #Execute service php
-docker run -itd --name phpserver -v "$PWD":/opt -p 8000:8000 phpcrud
+docker run -itd --name phpserver -v "$PWD":/opt -p 8000:8000 php-mysql
 
 #Check IP from PHP Server
 ipMysqlContainer=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{println .IPAddress}}{{end}}' mysqlDocker)
