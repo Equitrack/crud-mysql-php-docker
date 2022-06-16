@@ -33,3 +33,9 @@ Ejecutar el siguiente script para desplegar los servicios, y llenar algunos camp
 chmod +x deployCRUD.sh
 sudo ./deployCRUD.sh
 ```
+**Visualizar aplicación**
+
+La aplicación se expone en el puerto 8000
+```bash
+curl -I localhost:8000
+```
